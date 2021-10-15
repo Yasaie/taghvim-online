@@ -7,24 +7,25 @@ body {
 }
 
 #container {
-  background-image: url(../img/background.jpg);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 1000px;
   max-height: 784px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 158px 0 0 0;
+  background-image: url(../img/background.jpg);
 
   #global-date {
     font-family: $font_1;
     font-weight: bolder;
     display: flex;
+    justify-content: space-between;
+    width: 673px;
+    height: 226px;
+    margin-right: 6px;
     text-align: center;
     color: $color_loulou_approx;
-    width: 700px;
-    height: 226px;
-    justify-content: space-around;
 
     #gregorian {
       font-family: $font_0;
@@ -42,6 +43,7 @@ body {
 
     #jalali {
       line-height: 62px;
+      flex: 2;
 
       .year {
         font-size: 84px;
@@ -53,9 +55,9 @@ body {
       }
 
       .daymonth {
-        direction: rtl;
         font-size: 50px;
         margin-top: 18px;
+        direction: rtl;
 
         span:first-child {
           margin-left: 5px;
@@ -69,29 +71,30 @@ body {
       }
 
       .month {
-        margin-top: 15px;
         font-size: 36px;
+        margin-top: 15px;
       }
     }
 
     #gregorian, #islamic {
-      padding-top: 30px;
       line-height: 45px;
+      flex: 1;
+      padding-top: 30px;
 
       .day {
-        margin-top: 25px;
         font-size: 50px;
+        margin-top: 25px;
       }
     }
   }
 
   .azan {
     font-family: $font_1;
-    font-weight: bolder;
     font-size: 30px;
-    text-align: center;
-    margin: 16px 0;
+    font-weight: bolder;
     line-height: 50px;
+    margin: 16px 0;
+    text-align: center;
 
     span:nth-child(odd) {
       margin: 0 5px;
@@ -100,27 +103,27 @@ body {
 
   .note {
     font-family: $font_1;
-    background-color: transparent;
-    border: none;
+    font-size: 23px;
     font-weight: bolder;
-    resize: none;
     line-height: 34px;
     width: 793px;
     height: 190px;
+    resize: none;
     text-align: center;
-    font-size: 23px;
     white-space: pre;
+    border: none;
+    background-color: transparent;
     direction: rtl;
   }
 
   .zekr {
-    direction: rtl;
     font-family: $font_1;
+    font-size: 26px;
     font-weight: bolder;
+    line-height: 42px;
     margin: 60px 0 22px;
     text-align: center;
-    font-size: 26px;
-    line-height: 42px;
+    direction: rtl;
 
     .zekrname {
       font-size: 42px;
@@ -141,18 +144,18 @@ body {
   margin: 10px auto;
 
   button {
-    display: block;
-    height: 50px;
-    width: 100%;
-    margin: 0 10px;
     font-family: $font_1;
     font-size: 18px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition-duration: 500ms;
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     background-color: darken($color_holiday, 5%);
-    transition-duration: 500ms;
 
     &:hover {
       opacity: 0.8;
@@ -165,20 +168,20 @@ body {
 }
 
 div.minus-plus {
-  display: flex;
-  direction: rtl;
-  justify-content: center;
-  align-items: center;
   font-family: $font_1;
   font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: rtl;
 
   a {
+    margin: 5px 10px;
+    padding: 4px 20px;
     text-decoration: none;
     color: white;
-    background-color: #800aff;
-    padding: 4px 20px;
-    margin: 5px 10px;
     border-radius: 5px;
+    background-color: #800aff;
   }
 }
 
