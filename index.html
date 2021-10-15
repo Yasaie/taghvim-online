@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fa">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+    <link rel="stylesheet" href="assets/css/style.min.css">
+
+    <script src="assets/js/vue.min.js" type="text/javascript"></script>
+    <script src="assets/js/Adhan.js" type="text/javascript"></script>
+    <script src="assets/js/html2canvas.min.js" type="text/javascript"></script>
+    <script src="assets/js/javascript.js" type="text/javascript" async defer></script>
+
+    <title>تقویم جماران</title>
+
+</head>
+<body>
+
+<div id="main">
+    <div id="container" :class="holidayClass">
+
+        <div id="global-date">
+            <div id="gregorian">
+                <div class="year">{{ gregorian.year }}</div>
+                <div class="day">{{ gregorian.day }}</div>
+                <div class="month">{{ gregorian.month }}</div>
+            </div>
+
+            <div id="jalali">
+                <div class="year">{{ jalali.year }}</div>
+                <div class="week holiday">{{ jalali.weekDay }}</div>
+                <div class="daymonth holiday">
+                    <span>{{ jalali.day }}</span>
+                    <span>{{ jalali.month }}</span>
+                </div>
+            </div>
+
+            <div id="islamic">
+                <div class="year">{{ islamic.year }}</div>
+                <div class="day">{{ islamic.day }}</div>
+                <div class="month">{{ islamic.month }}</div>
+            </div>
+        </div>
+
+        <div class="azan">
+            <span>اذان&nbsp;صبح</span><span>{{ owghat.fajr }}</span>&nbsp;|
+            <span>طلوع&nbsp;آفتاب</span><span>{{ owghat.sunrise }}</span>&nbsp;|
+            <span>اذان&nbsp;ظهر</span><span>{{ owghat.dhuhr }}</span>&nbsp;|
+            <span>اذان&nbsp;مغرب</span><span>{{ owghat.isha }}</span>
+        </div>
+
+        <div class="note holiday" contenteditable="true">{{ occasion }}</div>
+
+        <div class="zekr">
+            <span class="100">۱۰۰ مرتبه : </span>
+            <span class="zekrname">{{ zekr[weekDay] }}</span>
+        </div>
+
+    </div>
+
+    <div id="screen-shot" style="display: none"><img/></div>
+
+    <div class="action-button">
+        <button @click="screenShot" id="screen-button">اسکیرن شات</button>
+        <button @click="makeHoliday">تــعــطــیــل</button>
+    </div>
+
+    <div class="minus-plus">
+        <span>تغییر روز:‌</span>
+        <a href="#" @click.prevent="addDate(-1)">« روز قبلی</a>
+        <a href="#" @click.prevent="addDate(1)">روز بعدی »</a>
+    </div>
+
+    <div class="minus-plus">
+        <span>ماه قمری:‌</span>
+        <a href="#" @click.prevent="addIslamic(-1)">« روز قبلی</a>
+        <a href="#" @click.prevent="addIslamic(1)">روز بعدی »</a>
+    </div>
+</div>
+
+</body>
+</html>

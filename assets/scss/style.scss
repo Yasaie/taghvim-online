@@ -1,0 +1,191 @@
+@import "variables";
+@import "fonts";
+
+body {
+  margin: 0;
+  background: $color_background;
+}
+
+#container {
+  background-image: url(../img/background.jpg);
+  width: 1000px;
+  max-height: 784px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 158px 0 0 0;
+
+  #global-date {
+    font-family: $font_1;
+    font-weight: bolder;
+    display: flex;
+    text-align: center;
+    color: $color_loulou_approx;
+    width: 700px;
+    height: 226px;
+    justify-content: space-around;
+
+    #gregorian {
+      font-family: $font_0;
+
+      .year {
+        font-size: 43px;
+      }
+
+      .month {
+        font-family: $font_2;
+        font-size: 45px;
+        margin-top: 8px;
+      }
+    }
+
+    #jalali {
+      line-height: 62px;
+
+      .year {
+        font-size: 84px;
+      }
+
+      .week {
+        font-size: 50px;
+        margin-top: 10px;
+      }
+
+      .daymonth {
+        direction: rtl;
+        font-size: 50px;
+        margin-top: 18px;
+
+        span:first-child {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    #islamic {
+      .year {
+        font-size: 52px;
+      }
+
+      .month {
+        margin-top: 15px;
+        font-size: 36px;
+      }
+    }
+
+    #gregorian, #islamic {
+      padding-top: 30px;
+      line-height: 45px;
+
+      .day {
+        margin-top: 25px;
+        font-size: 50px;
+      }
+    }
+  }
+
+  .azan {
+    font-family: $font_1;
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: center;
+    margin: 16px 0;
+    line-height: 50px;
+
+    span:nth-child(odd) {
+      margin: 0 5px;
+    }
+  }
+
+  .note {
+    font-family: $font_1;
+    background-color: transparent;
+    border: none;
+    font-weight: bolder;
+    resize: none;
+    line-height: 34px;
+    width: 793px;
+    height: 190px;
+    text-align: center;
+    font-size: 23px;
+    white-space: pre;
+    direction: rtl;
+  }
+
+  .zekr {
+    direction: rtl;
+    font-family: $font_1;
+    font-weight: bolder;
+    margin: 60px 0 22px;
+    text-align: center;
+    font-size: 26px;
+    line-height: 42px;
+
+    .zekrname {
+      font-size: 42px;
+    }
+  }
+
+  &.red {
+    .holiday {
+      color: $color_holiday;
+    }
+  }
+}
+
+
+.action-button {
+  display: flex;
+  width: 1000px;
+  margin: 10px auto;
+
+  button {
+    display: block;
+    height: 50px;
+    width: 100%;
+    margin: 0 10px;
+    font-family: $font_1;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: darken($color_holiday, 5%);
+    transition-duration: 500ms;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &#screen-button {
+      background-color: green;
+    }
+  }
+}
+
+div.minus-plus {
+  display: flex;
+  direction: rtl;
+  justify-content: center;
+  align-items: center;
+  font-family: $font_1;
+  font-size: 20px;
+
+  a {
+    text-decoration: none;
+    color: white;
+    background-color: #800aff;
+    padding: 4px 20px;
+    margin: 5px 10px;
+    border-radius: 5px;
+  }
+}
+
+#screen-shot {
+  text-align: center;
+
+  img {
+    height: 100vh;
+  }
+}
